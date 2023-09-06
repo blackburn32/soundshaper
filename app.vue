@@ -16,7 +16,7 @@
           <select class="select max-w-xs" data-choose-theme>
               <option v-for="theme in themes" :key="theme" :value="theme">{{capetelizeFirstLetter(theme)}}</option>
           </select>
-          <NuxtLink to="https://github.com/blackburn32/">
+          <NuxtLink to="https://github.com/blackburn32/soundshaper">
                 <Icon name="mdi:github" size="32"/>
           </NuxtLink>
       </div>

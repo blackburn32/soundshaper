@@ -1,6 +1,8 @@
 # Soundshaper
 
-A tool for creating music from shapes.
+A minimal polyrhythm visualizer.
+
+Live demo [here](https://blackburn32.github.io/soundshaper/)
 
 ## Setup
 
