@@ -15,11 +15,6 @@ module.exports = {
   daisyui: {
     themes: [
       "aqua",
-      "dark",
-      "synthwave",
-      "retro",
-      "cyberpunk",
-      "valentine",
       "pastel",
       "dracula",
       "night",

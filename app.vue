@@ -35,11 +35,6 @@ const capetelizeFirstLetter = (str: string) => {
 
 const themes = [
     "aqua",
-    "dark",
-    "synthwave",
-    "retro",
-    "cyberpunk",
-    "valentine",
     "pastel",
     "dracula",
     "night",
