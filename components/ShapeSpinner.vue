@@ -1,10 +1,10 @@
 <template>
-  <div class="flex flex-row w-full h-full justify-between">
+  <div class="flex flex-row w-full h-full items-center justify-between">
     <div class="w-[40px]" />
     <canvas class="z-10 rounded-xl bg-base-100 w-[300px] h-[300px]" ref="canvas" />
-    <div class="flex flex-col items-center space-y-2 my-2 w-[40px]">
+    <div class="flex flex-col items-center space-y-2 my-2 w-[40px] h-full">
       <Icon class="shrink-0 text-neutral-content" name="ic:outline-zoom-in" size="32" />
-      <input min="-5" :max="maxDepth" step="0.01" v-model="zoom" type="range" class="range-vertical h-full" />
+      <input min="-2" :max="maxDepth" step="0.01" v-model="zoom" type="range" class="range-vertical h-full max-w-[32px]" />
       <Icon class="shrink-0 text-neutral-content" name="ic:outline-zoom-out" size="32" />
     </div>
   </div>
@@ -21,7 +21,13 @@ const nuxt = useNuxtApp();
 const shapes: Ref<Shape[]> = nuxt.$shapes;
 const zStep = 3;
 const maxDepth = computed(() => shapes.value.length * zStep * 2);
-const zoom = ref(0);
+const zoom = ref(-2);
+
+watch(maxDepth, (newMax, oldMax) => {
+  if(newMax < zoom.value){
+    zoom.value = newMax - 2;
+  }
+})
 
 const scene = new THREE.Scene();
 
